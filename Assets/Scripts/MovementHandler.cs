@@ -6,8 +6,10 @@ public class MovementHandler : MonoBehaviour
 {
     [Header("Movement")]
     public float moveSpeed = 5f;
+    public float rotationSpeed = 10f;
 
-    Rigidbody rb;
+    private Rigidbody rb;
+    private Vector3 lastMovementDirection = Vector3.forward;
 
     private void Start()
     {
@@ -23,5 +25,24 @@ public class MovementHandler : MonoBehaviour
         Vector3 movement = new Vector3(horizontalInput, 0f, verticalInput) * moveSpeed * Time.fixedDeltaTime;
 
         rb.MovePosition(transform.position + movement);
+
+        Vector3 moveDirection = new Vector3(horizontalInput, 0f, verticalInput);
+        if (moveDirection != Vector3.zero)
+        {
+            lastMovementDirection = moveDirection.normalized;
+            RotatePlayer(lastMovementDirection);
+        }
+        else if (rb.velocity.magnitude < 0.1f)
+        {
+            RotatePlayer(lastMovementDirection);
+        }
+
+    }
+
+    void RotatePlayer(Vector3 targetDirection)
+    {
+        Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
+        Quaternion newRotation = Quaternion.Slerp(rb.rotation, targetRotation, rotationSpeed * Time.fixedDeltaTime);
+        rb.MoveRotation(newRotation);
     }
 }
