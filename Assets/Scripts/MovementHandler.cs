@@ -22,11 +22,14 @@ public class MovementHandler : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
+        // Moves the player based on W, A, S, and D inputs
         Vector3 movement = new Vector3(horizontalInput, 0f, verticalInput) * moveSpeed * Time.fixedDeltaTime;
 
         rb.MovePosition(transform.position + movement);
 
+        // If the player is moving, rotate them towards where they are going
         Vector3 moveDirection = new Vector3(horizontalInput, 0f, verticalInput);
+
         if (moveDirection != Vector3.zero)
         {
             lastMovementDirection = moveDirection.normalized;
@@ -39,6 +42,7 @@ public class MovementHandler : MonoBehaviour
 
     }
 
+    // Rotates the player towards the desired direction
     void RotatePlayer(Vector3 targetDirection)
     {
         Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
