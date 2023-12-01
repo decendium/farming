@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 69585e9468a10f84a99387e43b7a2da5
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - FARMVINTAGE
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 09094a1a3af2efb4cb0f891eb4aeb775, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
