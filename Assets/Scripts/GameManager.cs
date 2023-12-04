@@ -5,6 +5,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public GameObject pauseScreen;
+    public GameObject cropSelectionScreen;
+
     private bool isPaused = false;
 
     // Start is called before the first frame update
@@ -32,6 +34,17 @@ public class GameManager : MonoBehaviour
             pauseScreen.gameObject.SetActive(true);
             SetTimeScale(0);
             isPaused = true;
+        }
+    }
+
+    public void ToggleSelectionScreen()
+    {
+        if (cropSelectionScreen.activeSelf == true)
+        {
+            pauseScreen.gameObject.SetActive(false);
+        } else
+        {
+            pauseScreen.gameObject.SetActive(true);
         }
     }
 

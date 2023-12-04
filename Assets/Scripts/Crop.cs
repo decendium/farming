@@ -16,10 +16,12 @@ public class Crop : MonoBehaviour
 
     private Renderer cropRenderer;
     private Vector3 originalScale;
+    private GameManager gameManager;
 
     private void Start()
     {
         cropRenderer = GetComponent<Renderer>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         
         // Original scale for ResetCrop.
         originalScale = transform.localScale;
@@ -36,8 +38,17 @@ public class Crop : MonoBehaviour
         // If the crop is no longer growing and you click on it, make it grow.
         if (!isGrowing)
         {
-            isGrowing = true;
-            StartCoroutine(GrowCrop());
+            if (hasSelectedType)
+            {
+                isGrowing = true;
+                StartCoroutine(GrowCrop());
+            } else
+            {
+                // Logic to select crop type
+                gameManager.ToggleSelectionScreen();
+                // Toggle selection screen using gamemanager function
+                hasSelectedType = true;
+            }
         }
     }
 
@@ -68,13 +79,13 @@ public class Crop : MonoBehaviour
         finishedGrowing = true;
     }
 
-    // Resets the crop to its previous state.
-    // Not growing, and it hasn't finished growing.
+    // Resets the crop to its default.
     private void ResetCrop()
     {
         transform.localScale = originalScale;
         cropRenderer.material = originalColor;
         isGrowing = false;
         finishedGrowing = false;
+        hasSelectedType = false;
     }
 }
