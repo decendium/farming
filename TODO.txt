@@ -1,0 +1,4 @@
+- Make crop change colors based on cropType
+- Comment all functions
+- Make more crop fields
+- Score system (balance)
