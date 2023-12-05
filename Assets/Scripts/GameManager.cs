@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public GameObject cropSelectionScreen;
 
     private bool isPaused = false;
+    private Crop selectedCrop;
 
     // Start is called before the first frame update
     void Start()
@@ -41,10 +42,10 @@ public class GameManager : MonoBehaviour
     {
         if (cropSelectionScreen.activeSelf == true)
         {
-            pauseScreen.gameObject.SetActive(false);
+            cropSelectionScreen.gameObject.SetActive(false);
         } else
         {
-            pauseScreen.gameObject.SetActive(true);
+            cropSelectionScreen.gameObject.SetActive(true);
         }
     }
 
@@ -81,5 +82,29 @@ public class GameManager : MonoBehaviour
         {
             TogglePauseScreen();
         }
+    }
+
+    public void SetSelectedCropType(int cropType)
+    {
+        if (selectedCrop != null)
+        {
+            selectedCrop.SelectCrop(cropType);
+            selectedCrop = null;
+            ToggleSelectionScreen();
+        }
+    }
+
+    public void SetSelectedCropColor(Color color, Color finalColor)
+    {
+        if (selectedCrop != null)
+        {
+            selectedCrop.SetCropColors(color, finalColor);
+            selectedCrop = null;
+        }
+    }
+
+    public void AssignSelectedCrop(Crop crop)
+    {
+        selectedCrop = crop;
     }
 }
