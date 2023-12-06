@@ -33,31 +33,28 @@ public class Crop : MonoBehaviour
         if (finishedGrowing)
         {
             ResetCrop();
-        }
-
-        // If the crop is no longer growing and you click on it, make it grow.
-        if (!isGrowing)
+        } 
+        // If it isn't finished growing and is not growing,
+        // That means it is at its default state.
+        else if (!isGrowing)
         {
+            // If the player has selected a crop type, start growing the crop.
             if (hasSelectedType)
             {
                 isGrowing = true;
                 StartCoroutine(GrowCrop(cropType));
-            } else
+            }
+            else
             {
-                // Logic to select crop type
+                // If the player hasn't selected a crop type, then make the player select one. 
                 gameManager.AssignSelectedCrop(this);
                 gameManager.ToggleSelectionScreen();
-                // Toggle selection screen using gamemanager function
                 hasSelectedType = true;
             }
         }
     }
 
-    private void Update()
-    {
-
-    }
-
+    // IEnumerator to grow the crop (lerp the y scale of it). 
     private IEnumerator GrowCrop(int type)
     {
         float elapsedTime = 0f;
@@ -90,14 +87,40 @@ public class Crop : MonoBehaviour
         hasSelectedType = false;
     }
 
+    // Selects the crop type, and changes the colors based on the crop type.
     public void SelectCrop(int crop)
     {
         cropType = crop;
+        SetColor(crop);
+    }
+    
+    // Sets the colors of the crop based on the crop type.
+    // I love else if statements!
+    void SetColor(int cropType)
+    {
+        if (cropType == 1)
+        {
+            SetCropColors(new Color(1.0f, 1.0f, 0.145f), new Color(0.78f, 0.6f, 0.063f));
+        }
+        else if (cropType == 2)
+        {
+            SetCropColors(new Color(1.0f, 0.447f, 0.447f), new Color(0.651f, 0.153f, 0.153f));
+        }
+        else if (cropType == 3)
+        {
+            SetCropColors(new Color(0.561f, 0.561f, 1.0f), new Color(0.349f, 0.318f, 1.0f));
+        }
+        else if (cropType == 4)
+        {
+            SetCropColors(new Color(0.686f, 1.0f, 0.38f), new Color(0.314f, 0.459f, 0.169f));
+        }
     }
 
+    // Actually changes the crops colors.
     public void SetCropColors(Color color, Color changedFinishedColor)
     {
         cropRenderer.material.color = color;
+        originalColor = color;
         finishedColor = changedFinishedColor;
     }
 }

@@ -84,6 +84,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // Sets the selected crops crop type.
     public void SetSelectedCropType(int cropType)
     {
         if (selectedCrop != null)
@@ -94,15 +95,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void SetSelectedCropColor(Color color, Color finalColor)
-    {
-        if (selectedCrop != null)
-        {
-            selectedCrop.SetCropColors(color, finalColor);
-            selectedCrop = null;
-        }
-    }
-
+    // Assigns the crop.
     public void AssignSelectedCrop(Crop crop)
     {
         selectedCrop = crop;
