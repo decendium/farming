@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour
     public GameObject cropSelectionScreen;
     public TextMeshProUGUI balanceText;
     public int balance;
+    public Dictionary<string, int> inventory;
+    // be like "type1", 1; "type2", 1; etc.
+    // string is type of crop, second is amount that user has 
 
     private bool isPaused = false;
     private Crop selectedCrop;
@@ -16,7 +19,15 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // load values from save if im not lazy 
         balance = 10;
+        inventory = new Dictionary<string, int>()
+        {
+            {"crop1", 0 },
+            {"crop2", 0 },
+            {"crop3", 0 },
+            {"crop4", 0 },
+        };
     }
 
     // Update is called once per frame
@@ -103,5 +114,17 @@ public class GameManager : MonoBehaviour
     public void AssignSelectedCrop(Crop crop)
     {
         selectedCrop = crop;
+    }
+
+    // Changes the balance
+    public void ChangeBalance(int price)
+    {
+        balance += price;
+    }
+
+    // Changes the value of a key in the inventory dictionary
+    public void ChangeInventory(string key, int value)
+    {
+        inventory[key] += value;
     }
 }
