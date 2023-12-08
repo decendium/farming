@@ -91,28 +91,45 @@ public class Crop : MonoBehaviour
     public void SelectCrop(int crop)
     {
         cropType = crop;
-        SetColor(crop);
+        SetColorAndPrice(crop);
     }
     
     // Sets the colors of the crop based on the crop type.
+    // Also uses price.
     // I love else if statements!
-    void SetColor(int cropType)
+    void SetColorAndPrice(int cropType)
     {
         if (cropType == 1)
         {
-            SetCropColors(new Color(1.0f, 1.0f, 0.145f), new Color(0.78f, 0.6f, 0.063f));
+            if (gameManager.balance >= 5)
+            {
+                SetCropColors(new Color(1.0f, 1.0f, 0.145f), new Color(0.78f, 0.6f, 0.063f));
+                gameManager.balance -= 5;
+            }
         }
         else if (cropType == 2)
         {
-            SetCropColors(new Color(1.0f, 0.447f, 0.447f), new Color(0.651f, 0.153f, 0.153f));
+            if (gameManager.balance >= 15)
+            {
+                SetCropColors(new Color(1.0f, 0.447f, 0.447f), new Color(0.651f, 0.153f, 0.153f));
+                gameManager.balance -= 15;
+            }
         }
         else if (cropType == 3)
         {
-            SetCropColors(new Color(0.561f, 0.561f, 1.0f), new Color(0.349f, 0.318f, 1.0f));
+            if (gameManager.balance >= 45)
+            {
+                SetCropColors(new Color(0.561f, 0.561f, 1.0f), new Color(0.349f, 0.318f, 1.0f));
+                gameManager.balance -= 45;
+            }
         }
         else if (cropType == 4)
         {
-            SetCropColors(new Color(0.686f, 1.0f, 0.38f), new Color(0.314f, 0.459f, 0.169f));
+            if (gameManager.balance >= 135)
+            {
+                SetCropColors(new Color(0.686f, 1.0f, 0.38f), new Color(0.314f, 0.459f, 0.169f));
+                gameManager.balance -= 135;
+            }
         }
     }
 

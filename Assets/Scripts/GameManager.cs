@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     public GameObject pauseScreen;
     public GameObject cropSelectionScreen;
+    public TextMeshProUGUI balanceText;
+    public int balance;
 
     private bool isPaused = false;
     private Crop selectedCrop;
@@ -13,13 +16,14 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        balance = 10;
     }
 
     // Update is called once per frame
     void Update()
     {
         CheckForPause();
+        balanceText.text = "balance: $" + balance;
     }
 
     // Toggles the pause screen.
