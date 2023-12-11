@@ -29,27 +29,31 @@ public class Crop : MonoBehaviour
 
     private void OnMouseDown()
     {
-        // If it is finished growing, reset it.
-        if (finishedGrowing)
+        // If the player is not selecting a crop currently
+        if (!gameManager.IsSelecting())
         {
-            ResetCrop();
-        } 
-        // If it isn't finished growing and is not growing,
-        // That means it is at its default state.
-        else if (!isGrowing)
-        {
-            // If the player has selected a crop type, start growing the crop.
-            if (hasSelectedType)
+            // If it is finished growing, reset it.
+            if (finishedGrowing)
             {
-                isGrowing = true;
-                StartCoroutine(GrowCrop(cropType));
+                ResetCrop();
             }
-            else
+            // If it isn't finished growing and is not growing,
+            // That means it is at its default state.
+            else if (!isGrowing)
             {
-                // If the player hasn't selected a crop type, then make the player select one. 
-                gameManager.AssignSelectedCrop(this);
-                gameManager.ToggleSelectionScreen();
-                hasSelectedType = true;
+                // If the player has selected a crop type, start growing the crop.
+                if (hasSelectedType)
+                {
+                    isGrowing = true;
+                    StartCoroutine(GrowCrop(cropType));
+                }
+                else
+                {
+                    // If the player hasn't selected a crop type, then make the player select one. 
+                    gameManager.AssignSelectedCrop(this);
+                    gameManager.ToggleSelectionScreen();
+                    hasSelectedType = true;
+                }
             }
         }
     }
@@ -102,7 +106,7 @@ public class Crop : MonoBehaviour
         {
             if (gameManager.balance >= 5)
             {
-                SetCropColors(new Color(1.0f, 1.0f, 0.145f), new Color(0.78f, 0.6f, 0.063f));
+                SetCropColors(new Color(1.0f, 0.882f, 0.145f), new Color(1.0f, 0.749f, 0f));
                 ChangeBalance(-5);
             }
         }

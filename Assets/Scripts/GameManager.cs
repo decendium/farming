@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class GameManager : MonoBehaviour
@@ -53,6 +54,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // Toggles the selection screen.
     public void ToggleSelectionScreen()
     {
         if (cropSelectionScreen.activeSelf == true)
@@ -79,6 +81,11 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
+    // Returns true or false, if the player has the selection screen open.
+    public bool IsSelecting()
+    {
+        return cropSelectionScreen.activeSelf;
+    }
 
     // Sets the time scale.
     // Usually 0 or 1 to pause/resume game
