@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public GameObject pauseScreen;
     public GameObject cropSelectionScreen;
+    public GameObject inventoryScreen;
     public TextMeshProUGUI balanceText;
     public int balance;
     public Dictionary<string, int> inventory;
@@ -15,6 +16,7 @@ public class GameManager : MonoBehaviour
     // string is type of crop, second is amount that user has 
 
     private bool isPaused = false;
+    private bool isInInventory = false;
     private Crop selectedCrop;
 
     // Start is called before the first frame update
@@ -34,7 +36,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckForPause();
+        CheckForInput();
         balanceText.text = "balance: $" + balance;
     }
 
@@ -66,6 +68,21 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // Toggles the inventory screen.
+    public void ToggleInventoryScreen()
+    {
+        if (inventoryScreen.activeSelf == true)
+        {
+            inventoryScreen.gameObject.SetActive(false);
+            isInInventory = true;
+        }
+        else
+        {
+            inventoryScreen.gameObject.SetActive(true);
+            isInInventory = false;
+        }
+    }
+
     // Resumes the game. (for the resume button in pause)
     public void ResumeGame()
     {
@@ -94,15 +111,27 @@ public class GameManager : MonoBehaviour
         Time.timeScale = timeScale;
     }
 
-    // Checking to see if player pressed escape to pause the game.
-    void CheckForPause()
+    // Checking to see if player presses any buttons
+    void CheckForInput()
     {
+        // Checks for player pressing esc to open pause
         if (Input.GetKeyDown(KeyCode.Escape) && isPaused == false)
         {
             TogglePauseScreen();
-        } else if (Input.GetKeyDown(KeyCode.Escape) && isPaused == true)
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape) && isPaused == true)
         {
             TogglePauseScreen();
+        }
+
+        // Checks for player pressing I to open inv
+        if (Input.GetKeyDown(KeyCode.I) && isInInventory == false)
+        {
+            ToggleInventoryScreen();
+        } 
+        else if (Input.GetKeyDown(KeyCode.I) && isInInventory && true)
+        {
+            ToggleInventoryScreen();
         }
     }
 
