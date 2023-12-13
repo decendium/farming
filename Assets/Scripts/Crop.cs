@@ -139,7 +139,7 @@ public class Crop : MonoBehaviour
         {
             if (gameManager.balance >= 5)
             {
-                SetCropColors(new Color(1.0f, 0.882f, 0.145f), new Color(1.0f, 0.749f, 0f));
+                SetCropColors(new Color(1.0f, 0.882f, 0.145f), new Color(1.0f, 0.749f, 0f)); // Light yellow to dark yellow (orange)
                 ChangeBalance(-5);
             }
         }
@@ -147,7 +147,7 @@ public class Crop : MonoBehaviour
         {
             if (gameManager.balance >= 15)
             {
-                SetCropColors(new Color(1.0f, 0.447f, 0.447f), new Color(0.651f, 0.153f, 0.153f));
+                SetCropColors(new Color(1.0f, 0.447f, 0.447f), new Color(0.651f, 0.153f, 0.153f)); // Light red to dark red
                 ChangeBalance(-15);
             }
         }
@@ -155,7 +155,7 @@ public class Crop : MonoBehaviour
         {
             if (gameManager.balance >= 45)
             {
-                SetCropColors(new Color(0.561f, 0.561f, 1.0f), new Color(0.349f, 0.318f, 1.0f));
+                SetCropColors(new Color(0.561f, 0.561f, 1.0f), new Color(0.314f, 0.314f, 0.8f)); // Light blue to dark blue
                 ChangeBalance(-45);
             }
         }
@@ -163,7 +163,7 @@ public class Crop : MonoBehaviour
         {
             if (gameManager.balance >= 135)
             {
-                SetCropColors(new Color(0.686f, 1.0f, 0.38f), new Color(0.478f, 0.749f, 0.216f));
+                SetCropColors(new Color(0.686f, 1.0f, 0.38f), new Color(0.478f, 0.749f, 0.216f)); // Light green to dark green
                 ChangeBalance(-135);
             }
         }
