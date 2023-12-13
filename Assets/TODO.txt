@@ -1,4 +1,2 @@
 - Shop system to sell crops
-- Inventory system too I guess
-     - Done but just needs logic
 - Saves over restarts? Not really needed for grade but if I feel like it I can do it 
