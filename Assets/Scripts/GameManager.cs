@@ -23,13 +23,13 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         // load values from save if im not lazy 
-        balance = 10;
+        balance = 1000;
         inventory = new Dictionary<string, int>()
         {
-            {"crop1", 0 },
-            {"crop2", 0 },
-            {"crop3", 0 },
-            {"crop4", 0 },
+            {"c1", 0 },
+            {"c2", 0 },
+            {"c3", 0 },
+            {"c4", 0 },
         };
     }
 

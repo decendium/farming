@@ -1081,6 +1081,7 @@ GameObject:
   - component: {fileID: 354278700}
   - component: {fileID: 354278702}
   - component: {fileID: 354278701}
+  - component: {fileID: 354278703}
   m_Layer: 5
   m_Name: crop3
   m_TagString: Untagged
@@ -1148,6 +1149,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 354278699}
   m_CullTransparentMesh: 1
+--- !u!114 &354278703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 354278699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c54daaf0ab9d0a14a8bc2edac63330e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 1851265212}
+  amountText: {fileID: 651247575}
+  cropType: 3
 --- !u!1 &359684552
 GameObject:
   m_ObjectHideFlags: 0
@@ -2043,6 +2059,7 @@ GameObject:
   - component: {fileID: 583590884}
   - component: {fileID: 583590886}
   - component: {fileID: 583590885}
+  - component: {fileID: 583590887}
   m_Layer: 5
   m_Name: crop4
   m_TagString: Untagged
@@ -2110,6 +2127,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 583590883}
   m_CullTransparentMesh: 1
+--- !u!114 &583590887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583590883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c54daaf0ab9d0a14a8bc2edac63330e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 1851265212}
+  amountText: {fileID: 611508655}
+  cropType: 4
 --- !u!1 &596568858
 GameObject:
   m_ObjectHideFlags: 0
@@ -2782,7 +2814,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 704545603}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2822,8 +2854,8 @@ RectTransform:
   m_Children:
   - {fileID: 490418833}
   - {fileID: 61936853}
-  - {fileID: 670282555}
   - {fileID: 1528079772}
+  - {fileID: 670282555}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3897,6 +3929,7 @@ GameObject:
   - component: {fileID: 1231070674}
   - component: {fileID: 1231070676}
   - component: {fileID: 1231070675}
+  - component: {fileID: 1231070677}
   m_Layer: 5
   m_Name: crop2
   m_TagString: Untagged
@@ -3964,6 +3997,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1231070673}
   m_CullTransparentMesh: 1
+--- !u!114 &1231070677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231070673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c54daaf0ab9d0a14a8bc2edac63330e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 1851265212}
+  amountText: {fileID: 1717567841}
+  cropType: 2
 --- !u!1 &1252568457
 GameObject:
   m_ObjectHideFlags: 0
@@ -4657,7 +4705,7 @@ RectTransform:
   - {fileID: 354278700}
   - {fileID: 583590884}
   m_Father: {fileID: 704545603}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4675,6 +4723,7 @@ GameObject:
   - component: {fileID: 1541378034}
   - component: {fileID: 1541378036}
   - component: {fileID: 1541378035}
+  - component: {fileID: 1541378037}
   m_Layer: 5
   m_Name: crop1
   m_TagString: Untagged
@@ -4742,6 +4791,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1541378033}
   m_CullTransparentMesh: 1
+--- !u!114 &1541378037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1541378033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c54daaf0ab9d0a14a8bc2edac63330e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 1851265212}
+  amountText: {fileID: 1028852735}
+  cropType: 1
 --- !u!1 &1571991736
 GameObject:
   m_ObjectHideFlags: 0
