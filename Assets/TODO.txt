@@ -1,2 +1,14 @@
 - Shop system to sell crops
+- Logic for shop system
+	- When you are in the shop circle, set a bool to true like inCircle = true
+	- Make ui appear thats like "press e to open shop"
+		- can only open shop if inCircle = true
+	- E opens shop menu
+		- shop menu will haaaave.....
+		- Crop 1 Sell price: 7 (2 profit)
+		- Crop 2 Sell price: 20 (5 profit) x3
+		- Crop 3 Sell price: 60 (15 profit) x3
+		- Crop 4 Sell price: 180 (45 profit) x3
+		- bright green sell button after each row
+	- X in corner to close shop
 - Saves over restarts? Not really needed for grade but if I feel like it I can do it 

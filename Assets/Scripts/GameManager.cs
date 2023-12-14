@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public GameObject pauseScreen;
     public GameObject cropSelectionScreen;
     public GameObject inventoryScreen;
+    public GameObject shopScreen;
     public TextMeshProUGUI balanceText;
     public int balance;
     public Dictionary<string, int> inventory;
@@ -65,6 +66,19 @@ public class GameManager : MonoBehaviour
         } else
         {
             cropSelectionScreen.gameObject.SetActive(true);
+        }
+    }
+
+    // Toggles the shop screen.
+    public void ToggleShopScreen()
+    {
+        if (shopScreen.activeSelf == true)
+        {
+            shopScreen.gameObject.SetActive(false);
+        }
+        else
+        {
+            shopScreen.gameObject.SetActive(true);
         }
     }
 
