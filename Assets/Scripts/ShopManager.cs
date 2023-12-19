@@ -9,6 +9,7 @@ public class ShopManager : MonoBehaviour
     public GameObject shopPopupScreen;
     public GameObject shopScreen;
     public bool inCircle;
+    public bool isShowingPopup;
 
     // Start is called before the first frame update
     void Start()
@@ -19,16 +20,21 @@ public class ShopManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        CheckForInCircle();
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void CheckForInCircle()
     {
-        inCircle = true;
-    }
+        if (inCircle == true && isShowingPopup == false)
+        {
+            shopPopupScreen.gameObject.SetActive(true);
+            isShowingPopup = true;
+        } 
 
-    private void OnCollisionExit(Collision collision)
-    {
-        inCircle = false;
+        if (inCircle == false && isShowingPopup == true) 
+        {
+            shopPopupScreen.gameObject.SetActive(false);
+            isShowingPopup = false;
+        }
     }
 }

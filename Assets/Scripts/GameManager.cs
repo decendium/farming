@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public GameObject cropSelectionScreen;
     public GameObject inventoryScreen;
     public GameObject shopScreen;
+    public GameObject storeRing;
+    public GameObject playerObject;
     public TextMeshProUGUI balanceText;
     public int balance;
     public Dictionary<string, int> inventory;
