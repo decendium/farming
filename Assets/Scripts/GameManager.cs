@@ -10,8 +10,6 @@ public class GameManager : MonoBehaviour
     public GameObject cropSelectionScreen;
     public GameObject inventoryScreen;
     public GameObject shopScreen;
-    public GameObject storeRing;
-    public GameObject playerObject;
     public TextMeshProUGUI balanceText;
     public int balance;
     public Dictionary<string, int> inventory;
@@ -65,7 +63,8 @@ public class GameManager : MonoBehaviour
         if (cropSelectionScreen.activeSelf == true)
         {
             cropSelectionScreen.gameObject.SetActive(false);
-        } else
+        } 
+        else
         {
             cropSelectionScreen.gameObject.SetActive(true);
         }
@@ -169,9 +168,9 @@ public class GameManager : MonoBehaviour
     }
 
     // Changes the balance
-    public void ChangeBalance(int price)
+    public void ChangeBalance(int amount)
     {
-        balance += price;
+        balance += amount;
     }
 
     // Changes the value of a key in the inventory dictionary

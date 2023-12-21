@@ -20,10 +20,11 @@ public class ShopManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckForInCircle();
+        CheckForPopup();
+        CheckForShop();
     }
 
-    private void CheckForInCircle()
+    private void CheckForPopup()
     {
         if (inCircle == true && isShowingPopup == false)
         {
@@ -36,5 +37,42 @@ public class ShopManager : MonoBehaviour
             shopPopupScreen.gameObject.SetActive(false);
             isShowingPopup = false;
         }
+
+        if (shopScreen.activeSelf == true)
+        {
+            shopPopupScreen.gameObject.SetActive(false);
+            isShowingPopup = false;
+        }
+    }
+
+    // WHAT IS HAPPENING!!
+    private void CheckForShop()
+    {
+        if (isShowingPopup == true && Input.GetKeyDown(KeyCode.P))
+        {
+            gameManager.ToggleShopScreen();
+            gameManager.ToggleInventoryScreen();
+            shopPopupScreen.gameObject.SetActive(false);
+            isShowingPopup = false;
+        } 
+        else
+        {
+            // If the shop screen is active and either P or Esc is pressed, toggle the shop screen and show the popup again 
+            if (shopScreen.activeSelf == true && (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))) {
+                gameManager.ToggleShopScreen();
+                gameManager.ToggleInventoryScreen();
+                shopPopupScreen.gameObject.SetActive(true);
+                isShowingPopup = true;
+            }
+        }
+    }
+    public void ChangeInventoryAmount(int amount, int cropType)
+    {
+        gameManager.ChangeInventory("c" + cropType.ToString(), -amount);
+    }
+
+    public void ChangeBalance(int amount)
+    {
+        gameManager.ChangeBalance(amount);
     }
 }
