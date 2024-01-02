@@ -66,9 +66,13 @@ public class ShopManager : MonoBehaviour
             }
         }
     }
-    public void ChangeInventoryAmount(int amount, int cropType)
+    public void ChangeInventoryAmountAndBalance(int amountAndType)
     {
+        int amount, cropType;
+        cropType = amountAndType % 10;
+        amount = (amountAndType - (amountAndType % 10)) / 10;
         gameManager.ChangeInventory("c" + cropType.ToString(), -amount);
+
     }
 
     public void ChangeBalance(int amount)

@@ -6,17 +6,21 @@ using UnityEngine.UI;
 public class ShopButtons : MonoBehaviour
 {
     public GameManager gameManager;
+    public int cropType;
+    public int amount;
 
     // Start is called before the first frame update
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+
+        CheckPurchase();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        CheckPurchase();
     }
 
     public void ChangeInventoryAmount(int amountAndType)
@@ -29,6 +33,17 @@ public class ShopButtons : MonoBehaviour
         amount = (amountAndType - (amountAndType % 10)) / 10;
         
         gameManager.ChangeInventory("c" + cropType.ToString(), -amount);
+    }
+
+    public void CheckPurchase()
+    {
+        if (!(gameManager.inventory["c" + cropType.ToString()] >= amount))
+        {
+            GetComponent<Button>().interactable = false;
+        } else
+        {
+            GetComponent<Button>().interactable = true;
+        }
     }
 
     public void ChangeBalance(int amount)
