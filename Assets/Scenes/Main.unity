@@ -2368,7 +2368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 518fff0f151eb8d48b66fa889fd38aa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 1851265212}
   cropType: 1
   amount: 10
 --- !u!1 &408105047
@@ -3840,7 +3840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 518fff0f151eb8d48b66fa889fd38aa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 1851265212}
   cropType: 4
   amount: 1
 --- !u!1 &651247573
@@ -5668,7 +5668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 518fff0f151eb8d48b66fa889fd38aa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 1851265212}
   cropType: 3
   amount: 1
 --- !u!1 &936547887
@@ -6428,7 +6428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 518fff0f151eb8d48b66fa889fd38aa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 1851265212}
   cropType: 2
   amount: 1
 --- !u!1 &1231070673
@@ -7048,7 +7048,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 518fff0f151eb8d48b66fa889fd38aa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 1851265212}
   cropType: 2
   amount: 10
 --- !u!1 &1290757354
@@ -7856,7 +7856,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 518fff0f151eb8d48b66fa889fd38aa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 1851265212}
   cropType: 4
   amount: 5
 --- !u!1 &1477434470
@@ -8234,7 +8234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 518fff0f151eb8d48b66fa889fd38aa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 1851265212}
   cropType: 2
   amount: 5
 --- !u!1 &1541378033
@@ -9175,7 +9175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 518fff0f151eb8d48b66fa889fd38aa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 1851265212}
   cropType: 1
   amount: 1
 --- !u!1 &1683333475 stripped
@@ -9948,7 +9948,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 518fff0f151eb8d48b66fa889fd38aa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 1851265212}
   cropType: 3
   amount: 5
 --- !u!1 &1772446801
@@ -10246,7 +10246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 518fff0f151eb8d48b66fa889fd38aa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 1851265212}
   cropType: 3
   amount: 10
 --- !u!1 &1851265211
@@ -10881,7 +10881,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 518fff0f151eb8d48b66fa889fd38aa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 1851265212}
   cropType: 1
   amount: 5
 --- !u!1 &1924125681
@@ -11044,7 +11044,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 518fff0f151eb8d48b66fa889fd38aa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 1851265212}
   cropType: 4
   amount: 10
 --- !u!1 &1958298091
