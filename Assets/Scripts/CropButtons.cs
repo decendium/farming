@@ -23,6 +23,7 @@ public class CropButtons : MonoBehaviour
         CheckAffordability();
     }
 
+    // Checks if a player can afford the crop they are planting. 
     public void CheckAffordability()
     {
         if (gameManager.balance < cropCost)

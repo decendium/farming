@@ -132,7 +132,7 @@ public class Crop : MonoBehaviour
     }
     
     // Sets the colors of the crop based on the crop type.
-    // Also uses price.
+    // Also deducts price for crop from the players balance. 
     void SetColorAndPrice(int cropType)
     {
         if (cropType == 1)
@@ -177,6 +177,7 @@ public class Crop : MonoBehaviour
         finishedColor = changedFinishedColor;
     }
 
+    // Changes the player's balance.
     void ChangeBalance(int price)
     {
         gameManager.ChangeBalance(price);

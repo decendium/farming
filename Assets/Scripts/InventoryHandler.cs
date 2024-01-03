@@ -9,7 +9,7 @@ public class InventoryHandler : MonoBehaviour
     public TextMeshProUGUI amountText;
     public int cropType;
 
-    // Start is called before the first frame update
+    // Initializes the inventory.
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
@@ -17,7 +17,7 @@ public class InventoryHandler : MonoBehaviour
         amountText.text = gameManager.inventory["c" + cropType].ToString();
     }
 
-    // Update is called once per frame
+    // Updates the inventory every frame.
     void Update()
     {
         amountText.text = gameManager.inventory["c" + cropType].ToString();

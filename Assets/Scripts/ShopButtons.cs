@@ -23,18 +23,18 @@ public class ShopButtons : MonoBehaviour
         CheckPurchase();
     }
 
+    // This is so weird but it works!
+    // Changes the inventory amount by a given number.
     public void ChangeInventoryAmount(int amountAndType)
     {
         int amount, cropType;
-        // Ok man like idk anymore but umm 
-        // the int will be croptype and then the amount so like 14 would be 4 of crop 1 
-        // type is last digit so % 10
         cropType = amountAndType % 10;
         amount = (amountAndType - (amountAndType % 10)) / 10;
         
         gameManager.ChangeInventory("c" + cropType.ToString(), -amount);
     }
 
+    // Checks to see if player has enough of crop to sell.
     public void CheckPurchase()
     {
         if (!(gameManager.inventory["c" + cropType.ToString()] >= amount))
@@ -46,6 +46,7 @@ public class ShopButtons : MonoBehaviour
         }
     }
 
+    // Changes the player's balance.
     public void ChangeBalance(int amount)
     {
         gameManager.ChangeBalance(amount);

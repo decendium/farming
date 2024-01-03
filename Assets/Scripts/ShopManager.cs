@@ -24,6 +24,7 @@ public class ShopManager : MonoBehaviour
         CheckForShop();
     }
 
+    // Checks for the shop popup while you are in the circle, toggles screens accordingly.
     private void CheckForPopup()
     {
         if (inCircle == true && isShowingPopup == false)
@@ -66,6 +67,8 @@ public class ShopManager : MonoBehaviour
             }
         }
     }
+
+    // Changes the inventory amount, given an amount and type.
     public void ChangeInventoryAmountAndBalance(int amountAndType)
     {
         int amount, cropType;
@@ -75,6 +78,7 @@ public class ShopManager : MonoBehaviour
 
     }
 
+    // Changes the player's balance.
     public void ChangeBalance(int amount)
     {
         gameManager.ChangeBalance(amount);
