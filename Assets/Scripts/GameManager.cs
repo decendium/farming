@@ -13,8 +13,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI balanceText;
     public int balance;
     public Dictionary<string, int> inventory;
-    // be like "type1", 1; "type2", 1; etc.
-    // string is type of crop, second is amount that user has 
+    public List<Material> cropMaterials;
 
     private bool isPaused = false;
     private bool isInInventory = false;
@@ -24,7 +23,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         // load values from save if im not lazy 
-        balance = 1000;
+        balance = 20;
         inventory = new Dictionary<string, int>()
         {
             {"c1", 0 },

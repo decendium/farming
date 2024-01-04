@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Crop : MonoBehaviour
 {
+    public ParticleSystem harvestParticles;
     public Color finishedColor;
     public Color originalColor;
     public int cropType = 1;
@@ -15,12 +16,14 @@ public class Crop : MonoBehaviour
     private const int maxSize = 3;
 
     private Renderer cropRenderer;
+    private Renderer harvestRenderer;
     private Vector3 originalScale;
     private GameManager gameManager;
 
     private void Start()
     {
         cropRenderer = GetComponent<Renderer>();
+        harvestRenderer = harvestParticles.GetComponent<Renderer>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         
         // Original scale for ResetCrop.
@@ -86,11 +89,13 @@ public class Crop : MonoBehaviour
     // Resets the crop to its default, and adds one to the value in the inventory based on cropType.
     private void HarvestCrop()
     {
+        SelectMaterial(cropType);
         transform.localScale = originalScale;
         cropRenderer.material.color = originalColor;
         isGrowing = false;
         finishedGrowing = false;
         hasSelectedType = false;
+        harvestParticles.Play();
 
         switch (cropType)
         {
@@ -129,6 +134,12 @@ public class Crop : MonoBehaviour
     {
         cropType = crop;
         SetColorAndPrice(crop);
+    }
+
+    // Selects the material for the crop harvesting particles.
+    public void SelectMaterial(int c)
+    {
+        harvestRenderer.material = gameManager.cropMaterials[c-1];
     }
     
     // Sets the colors of the crop based on the crop type.
