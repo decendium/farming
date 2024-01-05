@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public GameObject cropSelectionScreen;
     public GameObject inventoryScreen;
     public GameObject shopScreen;
+    public GameObject startScreen;
     public TextMeshProUGUI balanceText;
     public int balance;
     public Dictionary<string, int> inventory;
@@ -41,7 +42,7 @@ public class GameManager : MonoBehaviour
     }
 
     // Toggles the pause screen.
-    void TogglePauseScreen()
+    public void TogglePauseScreen()
     {
         if (pauseScreen.activeSelf == true)
         {
@@ -54,6 +55,11 @@ public class GameManager : MonoBehaviour
             SetTimeScale(0);
             isPaused = true;
         }
+    }
+
+    public void HideStartScreen()
+    {
+        startScreen.gameObject.SetActive(false);
     }
 
     // Toggles the selection screen.
