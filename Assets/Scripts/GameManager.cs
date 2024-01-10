@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     private bool isPaused = false;
     private bool isInInventory = false;
     private Crop selectedCrop;
+    private AudioSource sellAudio;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +33,7 @@ public class GameManager : MonoBehaviour
             {"c3", 0 },
             {"c4", 0 },
         };
+        sellAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -176,6 +178,7 @@ public class GameManager : MonoBehaviour
     public void ChangeBalance(int amount)
     {
         balance += amount;
+        sellAudio.Play();
     }
 
     // Changes the value of a key in the inventory dictionary

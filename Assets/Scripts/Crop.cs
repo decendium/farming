@@ -17,6 +17,7 @@ public class Crop : MonoBehaviour
 
     private Renderer cropRenderer;
     private Renderer harvestRenderer;
+    private AudioSource harvestingSound;
     private Vector3 originalScale;
     private GameManager gameManager;
 
@@ -24,6 +25,7 @@ public class Crop : MonoBehaviour
     {
         cropRenderer = GetComponent<Renderer>();
         harvestRenderer = harvestParticles.GetComponent<Renderer>();
+        harvestingSound = GetComponent<AudioSource>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         
         // Original scale for ResetCrop.
@@ -96,6 +98,7 @@ public class Crop : MonoBehaviour
         finishedGrowing = false;
         hasSelectedType = false;
         harvestParticles.Play();
+        harvestingSound.Play();
 
         switch (cropType)
         {
